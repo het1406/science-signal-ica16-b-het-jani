@@ -97,6 +97,7 @@ class _SignalHomeState extends State<SignalHome> {
 
   Future<void> authenticate({bool create = false}) async {
     if (signingIn) return;
+    FocusScope.of(context).unfocus();
     setState(() {
       signingIn = true;
       authError = '';

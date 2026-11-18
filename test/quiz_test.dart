@@ -92,7 +92,10 @@ void main() {
     final fixed = fixedPayload(3);
     expect(fixed.length, 5);
     expect(() => fixed['correctCount'] = 4, throwsUnsupportedError);
-    expect(matchesPayload({...fixed, 'submittedAt': 'placeholder'}, fixed), true);
+    expect(
+      matchesPayload({...fixed, 'submittedAt': 'placeholder'}, fixed),
+      true,
+    );
     expect(
       matchesPayload({
         ...fixed,
@@ -102,7 +105,11 @@ void main() {
       false,
     );
     expect(
-      matchesPayload({...fixed, 'submittedAt': 'placeholder', 'extra': 1}, fixed),
+      matchesPayload({
+        ...fixed,
+        'submittedAt': 'placeholder',
+        'extra': 1,
+      }, fixed),
       false,
     );
     expect(

@@ -52,3 +52,4 @@ submission/
 *.jks
 *.keystore
 android/key.properties
+android/.kotlin/

@@ -79,7 +79,9 @@ class SignalController extends ChangeNotifier {
     final epoch = _epoch;
     owner = uid;
     busy = true;
-    ref = repository.newRound(uid);
+    if (phase != Phase.requestError || ref == null) {
+      ref = repository.newRound(uid);
+    }
     payload = null;
     quiz = null;
     writeAcknowledged = false;
@@ -170,9 +172,7 @@ class SignalController extends ChangeNotifier {
           'Write acknowledged. Checking the server record…',
         );
       }
-      final snapshot = await repository
-          .verify(round, uid, fixed)
-          .timeout(const Duration(seconds: 25));
+      final snapshot = await repository.verify(round, uid, fixed);
       if (_current(epoch, uid)) {
         submittedAt = snapshot.data()!['submittedAt'] as Timestamp;
         _set(Phase.cloudVerified, 'Cloud verified');
@@ -209,7 +209,9 @@ class SignalController extends ChangeNotifier {
         !RegExp(r'^[A-Za-z0-9]{20}$').hasMatch(id)) {
       return;
     }
-    if (ref != null && phase != Phase.cloudVerified && phase != Phase.signedOut) {
+    if (ref != null &&
+        phase != Phase.cloudVerified &&
+        phase != Phase.signedOut) {
       return;
     }
     final uid = auth.currentUser!.uid, epoch = _epoch;
