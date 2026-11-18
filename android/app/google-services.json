@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "462348693906",
+    "project_id": "science-signal-het-ica16-b",
+    "storage_bucket": "science-signal-het-ica16-b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462348693906:android:f3159ceeaaf5f1a0f1d14b",
+        "android_client_info": {
+          "package_name": "edu.gsu.hetjani.science_signal_ica16_b"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAENeoUgL8hwS1HkwR0W31y-heVb_qlaM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
