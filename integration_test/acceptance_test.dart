@@ -41,6 +41,21 @@ Future<void> screenshot(WidgetTester tester, String name) async {
   await File('${dir.path}/$name.png').writeAsBytes(bytes);
 }
 
+Future<void> setDeviceNetwork(bool online) async {
+  final dir = '/data/data/edu.gsu.hetjani.science_signal_ica16_b/files';
+  final name = online ? 'online' : 'offline';
+  await File('$dir/$name.request').writeAsString(name);
+  final ack = File('$dir/$name.ack');
+  for (var i = 0; i < 40 && !await ack.exists(); i++) {
+    await Future<void>.delayed(const Duration(milliseconds: 500));
+  }
+  if (!await ack.exists())
+    throw StateError(
+      'Start tools/collect_emulator_evidence.py to control emulator radios.',
+    );
+  await Future<void>.delayed(const Duration(seconds: 2));
+}
+
 class FaultRepository extends AttemptRepository {
   String? fault;
   Duration delay = Duration.zero;
@@ -357,18 +372,18 @@ void main() {
       offline.payload = fixedPayload(2);
       offline.phase = Phase.readyToSubmit;
       final offlineId = offline.ref!.id;
-      await db.disableNetwork();
+      await setDeviceNetwork(false);
       await offline.submit();
       expect(offline.phase, Phase.saveUnknown);
       expect(offline.ref!.id, offlineId);
-      await db.enableNetwork();
+      await setDeviceNetwork(true);
       await Future<void>.delayed(const Duration(seconds: 6));
       await offline.submit();
       expect(offline.phase, Phase.cloudVerified);
       expect(offline.ref!.id, offlineId);
       evidence(
         'T08',
-        'PASS real SDK network disabled; unknown/unavailable write; recovery same ID=$offlineId',
+        'PASS emulator radios disabled; unknown/unavailable write; recovery same ID=$offlineId',
       );
       offline.dispose();
 

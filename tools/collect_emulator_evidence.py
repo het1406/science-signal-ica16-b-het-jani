@@ -8,6 +8,12 @@ seen=set()
 while time.monotonic()<end:
  r=subprocess.run([adb,'shell','run-as',package,'ls','files'],capture_output=True,text=True)
  for name in r.stdout.splitlines():
+  if name in ['offline.request','online.request'] and name not in seen:
+   mode='enable' if name=='online.request' else 'disable'
+   for radio in ['wifi','data']:subprocess.run([adb,'shell','svc',radio,mode],capture_output=True)
+   subprocess.run([adb,'shell','run-as',package,'touch','files/'+name.replace('.request','.ack')],capture_output=True)
+   seen.add(name);print('Emulator radios',mode,flush=True)
+   continue
   if name in seen or not (name.endswith('.png') or name=='restart.json'):continue
   b=subprocess.run([adb,'exec-out','run-as',package,'cat','files/'+name],capture_output=True)
   if b.returncode:continue
