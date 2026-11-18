@@ -22,12 +22,13 @@ dart format .
 flutter analyze
 flutter test
 python3 tools/provision_test_accounts.py
+# In a separate terminal, start tools/collect_emulator_evidence.py for screenshots and device-radio control.
 flutter test integration_test/acceptance_test.dart -d emulator-5554 --dart-define-from-file=/tmp/science-signal-test.secret.json
 flutter test integration_test/restart_test.dart -d emulator-5554 --dart-define-from-file=/tmp/science-signal-test.secret.json
 flutter build apk --release
 ```
 
-The provisioning script creates two dedicated test accounts only in the configured project. It stores random credentials in a mode-0600 local `/tmp` file. Do not publish that file or an integration-test APK. Release builds do not include test credentials. The final release uses the local signing configuration documented in the build evidence; signing keys and passwords are excluded from source.
+The provisioning script creates two dedicated test accounts only in the configured project. It stores random credentials in a mode-0600 local `/tmp` file. Do not publish that file or an integration-test APK. Release builds do not include test credentials. The coursework release is optimized release mode and uses the local development signing certificate from the Flutter template. It is installable but is not configured for Play Store distribution. Signing keys and passwords are excluded from source.
 
 ## Exact storage contract
 
@@ -73,3 +74,5 @@ OpenAI Codex assisted with implementation, testing, debugging, documentation, an
 - [Firestore security rule behavior](https://firebase.google.com/docs/rules/rules-behavior)
 - [Firestore data validation](https://firebase.google.com/docs/rules/data-validation)
 - [Firebase API keys](https://firebase.google.com/docs/projects/api-keys)
+
+Test trace timestamps come from the emulator clock; the emulator paused during host sleep. The resolved Firestore server timestamp is authoritative and can differ from device event timestamps.

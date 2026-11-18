@@ -1,0 +1,31 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart
+Running Gradle task 'assembleDebug'...                             14.3s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...        2,454ms
+00:00 +0: T01–T12 real Firebase Class B acceptance
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: not null
+  Actual: <null>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart:154:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart line 154
+The test description was:
+  T01–T12 real Firebase Class B acceptance
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:50 +0 -1: T01–T12 real Firebase Class B acceptance [E]
+  Test failed. See exception logs above.
+  The test description was: T01–T12 real Firebase Class B acceptance
+  
+00:50 +0 -1: (tearDownAll)
+00:53 +0 -1: Some tests failed.

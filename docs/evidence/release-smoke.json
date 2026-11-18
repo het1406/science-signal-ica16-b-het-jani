@@ -1,0 +1,35 @@
+{
+  "mode": "release",
+  "device": "Pixel_4a emulator Android API 37",
+  "physical_device": false,
+  "events": [
+    {
+      "timestamp": "2026-11-18T04:04:51.158745+00:00",
+      "observed": "PASS release APK: native Email/Password sign-in and live quiz previously observed in release-first.log"
+    },
+    {
+      "timestamp": "2026-11-18T04:04:51.160164+00:00",
+      "observed": "PASS release APK: all five review entries independently counted; visible score=2/5; repeated native taps had no extra answers"
+    },
+    {
+      "timestamp": "2026-11-18T04:05:04.406727+00:00",
+      "observed": "PASS release APK: transaction acknowledged and server verification displayed"
+    },
+    {
+      "timestamp": "2026-11-18T04:05:37.982263+00:00",
+      "observed": "PASS release APK: force-stop/relaunch retrieves the same original server round"
+    },
+    {
+      "timestamp": "2026-11-18T04:06:36.846797+00:00",
+      "observed": "PASS release APK: actual offline API request shows readable network error and manual Retry questions control"
+    },
+    {
+      "timestamp": "2026-11-18T04:06:46.214604+00:00",
+      "observed": "PASS release APK: manual retry after network restoration loads a live five-question round"
+    }
+  ],
+  "round_id": "EqpDVkiYAmb7BmtUStQ7",
+  "score": 2,
+  "restart_server_verified": true,
+  "network_failure_recovery_verified": true
+}

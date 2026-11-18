@@ -1,0 +1,43 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart
+Running Gradle task 'assembleDebug'...                             12.0s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...        1,901ms
+00:00 +0: T01–T12 real Firebase Class B acceptance
+EVIDENCE 2026-11-18T03:32:16.314325Z T01 PASS invalid credentials displayed; real user A authenticated; project=science-signal-het-ica16-b
+EVIDENCE 2026-11-18T03:32:16.888338Z T02 PASS live exact endpoint; encoded=Sound%20can%20travel%20through%20a%20vacuum. decoded=Sound can travel through a vacuum. count=5
+EVIDENCE 2026-11-18T03:32:25.684993Z T04 PASS alternating answers score=3; repeated taps ignored
+EVIDENCE 2026-11-18T03:32:25.688782Z T05 PASS five answers reviewed; fresh replay checked below
+EVIDENCE 2026-11-18T03:32:32.313820Z T09 WRITE_ACK then injected permission-denied; path=users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/Udn6mRfmNUMa06wByAUN; document still exists; score=3; pending=false; cache=false
+EVIDENCE 2026-11-18T03:32:39.775543Z T06 PASS create-once; double submit ignored; exact fields=questionCount,schemaVersion,correctCount,variant,submittedAt,categoryId; timestamp=2026-11-18T03:32:29.128Z; serverOnly=true
+EVIDENCE 2026-11-18T03:32:39.776858Z T09 PASS recovery same ID=Udn6mRfmNUMa06wByAUN; no duplicate; Cloud verified
+EVIDENCE 2026-11-18T03:32:42.086474Z COLLISION PASS same ID different score rejected; original preserved
+EVIDENCE 2026-11-18T03:32:43.655226Z T10 PASS independently authenticated B denied read AND create under A
+EVIDENCE 2026-11-18T03:32:45.293683Z T11 PASS deployed rules reject score 6, extra field, update, delete
+EVIDENCE 2026-11-18T03:32:51.967828Z T12 PASS injected unavailable after real transaction; immediate retry blocked; same-ID server recovery; creates=1
+EVIDENCE 2026-11-18T03:32:58.556787Z T12 PASS injected resource-exhausted after real transaction; immediate retry blocked; same-ID server recovery; creates=1
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: Phase:<Phase.saveUnknown>
+  Actual: Phase:<Phase.verificationUnavailable>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart:362:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart line 362
+The test description was:
+  T01–T12 real Firebase Class B acceptance
+════════════════════════════════════════════════════════════════════════════════════════════════════
+03:35 +0 -1: T01–T12 real Firebase Class B acceptance [E]
+  Test failed. See exception logs above.
+  The test description was: T01–T12 real Firebase Class B acceptance
+  
+03:35 +0 -1: (tearDownAll)
+03:39 +0 -1: Some tests failed.

@@ -1,0 +1,7 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/test/quiz_test.dart
+00:00 +0: T02 URL3986 decoding and exact endpoint
+00:00 +1: T03 rejects malformed data across every required field
+00:00 +2: T04 repeated taps never add points and Continue requires an answer
+00:00 +3: T05 five-answer review and cleared replay
+00:00 +4: T06 frozen exact fixed payload and collision comparison
+00:00 +5: All tests passed!

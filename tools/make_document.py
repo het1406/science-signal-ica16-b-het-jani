@@ -60,7 +60,9 @@ if __name__=='__main__':
  doc.add_paragraph('Firebase project: science-signal-het-ica16-b. Dedicated project and GitHub repository created during this session. Email/Password enabled by Het Jani; test accounts provisioned with random local credentials. Firebase client configuration is safe to share; passwords, OAuth tokens and signing keys are excluded.')
  doc.add_heading('Four genuine checkpoints',1)
  for block in (ROOT/'docs/checkpoints.md').read_text().split('\n\n'):
-  if not block.startswith('#'):doc.add_paragraph(block)
+  if not block.startswith('#'):
+   for item in re.split(r'\n(?=\d\. )', block):
+    doc.add_paragraph(item.replace('**','').replace('`',''))
  doc.add_heading('State machine and transition guards',1);doc.add_picture(str(E/'state-machine.png'),width=Inches(7.1))
  doc.add_paragraph('Figure 1. Implemented phases in lib/controller.dart. Arrows summarize the main paths; the complete labeled transition diagram is in docs/state-machine.md.')
  doc.add_paragraph('phase tracks the UI; writeAcknowledged records commit acknowledgement independently; ref retains the original ID; payload is frozen; busy blocks overlap; _lastRecovery enforces five seconds; _epoch rejects completions after an identity change. The 10-second Timer reports uncertainty without canceling the SDK operation or unlocking a second submission. A real transaction allows at most three attempts. Server retrieval and history support recovery after restart.')
@@ -84,7 +86,7 @@ if __name__=='__main__':
  t=doc.add_table(rows=1,cols=2);t.style='Light Shading Accent 1';t.rows[0].cells[0].text='Field';t.rows[0].cells[1].text='Observed value'
  for key,value in results['fields'].items():c=t.add_row().cells;c[0].text=key;c[1].text=str(value)
  doc.add_paragraph('Server verification: '+results['server_verification'])
- for name,caption,width in [('firebase-auth-console.png','Figure 2. Genuine Firebase Console: Email/Password enabled.',6.8),('firestore-console.png','Figure 3. Genuine Firebase Console: original immutable attempt, six fields and resolved timestamp.',6.8),('T09-verification-unavailable.png','Figure 4. Actual emulator UI after the real commit and injected verification denial.',3.1),('T09-cloud-verified.png','Figure 5. Same round verified from the server after recovery.',3.1),('T07-restart.png','Figure 6. Fresh-process authenticated retrieval of the original server document.',3.1),('release-cloud-verified.png','Figure 7. Installed release APK completed a live round and server verification.',3.1)]:
+ for name,caption,width in [('firebase-auth-console.png','Figure 2. Genuine Firebase Console: Email/Password enabled.',6.8),(('firestore-console.png' if (E/'firestore-console.png').exists() else 'firestore-console-earlier.png'),('Figure 3. Genuine Firebase Console: final tested attempt and all six fields.' if (E/'firestore-console.png').exists() else 'Figure 3. Genuine Console capture from the earlier T09 run: users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/Udn6mRfmNUMa06wByAUN; score 3; submittedAt 2026-11-18T03:32:29.128Z. The final test run uses the separate round ending EhgD9, documented in the table and server-read evidence above. Different runs allocate different IDs; each recovery retains its own original ID.'),6.8),('T09-verification-unavailable.png','Figure 4. Actual emulator UI after the real commit and injected verification denial.',3.1),('T09-cloud-verified.png','Figure 5. Same round verified from the server after recovery.',3.1),('T07-restart.png','Figure 6. Fresh-process authenticated retrieval of the original server document.',3.1),('release-cloud-verified.png','Figure 7. Installed release APK completed a live round and server verification.',3.1)]:
   if (E/name).exists():doc.add_picture(str(E/name),width=Inches(width));doc.add_paragraph(caption)
   else:doc.add_paragraph('MISSING EVIDENCE: '+caption)
  doc.add_heading('Failed-first corrections',1)
@@ -102,6 +104,7 @@ if __name__=='__main__':
   for cell,v in zip(cells,[a,b,c]):cell.text=v
  doc.add_paragraph('These are readiness assessments, not an instructor-assigned grade. No perfect score is guaranteed.')
  doc.add_paragraph('Remaining blockers: '+results['blockers'])
+ doc.add_paragraph('Console capture provenance: an earlier genuine Console capture is retained if macOS screen capture is unavailable for the final round. The caption identifies its exact path and timestamp; it is not presented as a screenshot of another record.')
  footer=sec.footer.paragraphs[0];footer.text='Het Jani · Science Signal · Class B · Genuine observed evidence';footer.style='Caption'
  path=ROOT/'submission/ICA16_B_HetJani.docx';doc.save(path)
  print('Wrote',path)

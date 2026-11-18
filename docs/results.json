@@ -1,0 +1,183 @@
+{
+  "verdict": "READY TO SUBMIT",
+  "source_commit": "ae7d0ff73ce1eb81493241ac3323a521117d973c",
+  "tests": [
+    {
+      "id": "T01",
+      "status": "PASS",
+      "preconditions": "Two independently provisioned Email/Password accounts; signed-out app.",
+      "action": "Enter invalid credentials, then authenticate correctly; expect readable rejection and a real currentUser.",
+      "actual": "Invalid credential error shown; user A authenticated in the real project. Release native-UI login also passed.",
+      "timestamp": "2026-11-18T03:37:18.578353Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "not applicable",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T02",
+      "status": "PASS",
+      "preconditions": "Live OpenTDB endpoint reachable; no fixture in production.",
+      "action": "GET exact required URL; decode URL3986; expect exactly five medium Science & Nature boolean questions.",
+      "actual": "Live encoded panda-question example decoded correctly; five-question app round loaded. Exact endpoint and validation also checked locally.",
+      "timestamp": "2026-11-18T03:37:19.081789Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "not applicable",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T03",
+      "status": "PASS",
+      "preconditions": "Isolated parser fixtures, never production substitutes.",
+      "action": "Supply invalid percent escapes, response code, count and metadata; expect rejection.",
+      "actual": "All malformed-escape, incorrect-category/difficulty/type, response-code, result-count, duplicate-answer and invalid-JSON checks passed.",
+      "timestamp": "2026-11-18T03:38:37.593052Z",
+      "commit": "ae7d0ff73ce1eb81493241ac3323a521117d973c",
+      "round_suffix": "not applicable",
+      "evidence": "docs/evidence/unit-final.log"
+    },
+    {
+      "id": "T04",
+      "status": "PASS",
+      "preconditions": "Live five-question round.",
+      "action": "Answer alternately correct/wrong; repeat taps; expect only one answer and at most one point per question.",
+      "actual": "Five answers yielded 3/5; repeated answers ignored. Release native repeated taps also left correct visible scoring.",
+      "timestamp": "2026-11-18T03:37:29.009957Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T05",
+      "status": "PASS",
+      "preconditions": "Five recorded answers and a verified original round.",
+      "action": "Review all answers; replay; expect cleared answers and a new generated ID.",
+      "actual": "Five-answer review recorded; final replay had an empty answer list and a different ID.",
+      "timestamp": "2026-11-18T03:38:33.579172Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T06",
+      "status": "PASS",
+      "preconditions": "Signed-in A; frozen score=3; allocated original round ID.",
+      "action": "Submit twice; expect one create-once operation, six fields, resolved timestamp and actual server-only verification.",
+      "actual": "Real transaction acknowledged; repeated submit ignored; exact six fields; Timestamp resolved; Source.server verified with no pending writes or cached metadata.",
+      "timestamp": "2026-11-18T03:37:43.070137Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T07",
+      "status": "PASS",
+      "preconditions": "Original real document exists; application process restarted.",
+      "action": "Authenticate as same user and retrieve original ID; expect same score/timestamp from server.",
+      "actual": "Fresh test process reauthenticated A and retrieved original 3/5 document with unchanged timestamp. Installed release force-stop/relaunch also retrieved its own original round.",
+      "timestamp": "2026-11-18T03:57:28.512741Z",
+      "commit": "ae7d0ff73ce1eb81493241ac3323a521117d973c",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/restart.log; T07-restart.png"
+    },
+    {
+      "id": "T08",
+      "status": "PASS",
+      "preconditions": "Allocated frozen round; emulator Wi-Fi and mobile data disabled by test helper.",
+      "action": "Submit offline, restore radios, recover; expect uncertainty and same-ID server verification.",
+      "actual": "Actual offline attempt reached saveUnknown; after connectivity restoration, the original ID was cloudVerified. Initial SDK-disable-only test failed its expectation and was corrected.",
+      "timestamp": "2026-11-18T03:38:16.342993Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026ablL15",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T09",
+      "status": "PASS",
+      "preconditions": "Real transaction succeeds; debug hook armed to deny first verification.",
+      "action": "Observe denial, disable hook, retry same server read; expect preserved record, same ID and verification only after server success.",
+      "actual": "Real WRITE_ACK followed by injected permission-denied; actual server document remained present. Same-ID retry reached Cloud verified. No replacement round was allocated.",
+      "timestamp": "2026-11-18T03:37:43.125096Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T10",
+      "status": "PASS",
+      "preconditions": "A owns original record; B authenticated independently.",
+      "action": "B reads A record and creates under A path; expect server permission-denied.",
+      "actual": "Both real deployed-rule operations returned permission-denied.",
+      "timestamp": "2026-11-18T03:37:47.856878Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T11",
+      "status": "PASS",
+      "preconditions": "A authenticated; strict rules deployed.",
+      "action": "Try score 6, extra field, update and deletion; expect rejection.",
+      "actual": "All four real deployed-rule operations rejected with permission-denied.",
+      "timestamp": "2026-11-18T03:37:49.658192Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    },
+    {
+      "id": "T12",
+      "status": "PASS",
+      "preconditions": "Real committed document; labeled one-shot repository fault injection.",
+      "action": "Inject unavailable/resource-exhausted, attempt immediate retry, then bounded recovery; expect no overlap or duplicate.",
+      "actual": "Both fault codes produced verificationUnavailable after acknowledgement; immediate retry blocked; delayed server-only retry succeeded; createOnce count stayed one. Separate delayed acknowledgement and account-change tests also passed.",
+      "timestamp": "2026-11-18T03:38:02.917006Z",
+      "commit": "a98fadce43d7786bb82b0cfd64437fb5270d4ef1",
+      "round_suffix": "\u2026kEhgD9",
+      "evidence": "docs/evidence/acceptance-final.log"
+    }
+  ],
+  "document_path": "users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/uxbmi3ObbqhbiGkEhgD9",
+  "fields": {
+    "categoryId": 17,
+    "submittedAt": "2026-11-18T03:38:28.298Z",
+    "correctCount": 3,
+    "variant": "B",
+    "questionCount": 5,
+    "schemaVersion": 1
+  },
+  "server_verification": "Flutter Source.server checks passed in the original run and after fresh-process reauthentication; hasPendingWrites=false, isFromCache=false. A supplementary owner-authenticated REST GET also returned HTTP 200 with the exact six fields. Device event clocks and server timestamps may differ after host sleep; server submittedAt is authoritative.",
+  "build": "flutter pub get, dart format ., flutter analyze, and all five unit tests passed. Both real Firebase integration runs passed. flutter build apk --release produced a 49.5 MB APK (tool display). adb install succeeded on Pixel_4a, Android API 37. Native release UI sign-in, live questions, scoring, repeated taps, transaction, server verification and force-stop/relaunch retrieval passed. This coursework release uses the template development signing certificate; no physical device or Play Store distribution is claimed. Release-mode actual offline HTTP error and manual retry also passed (release-network.log).",
+  "apk_sha256": "23d118901b80098c82482f8d8540f6b6025161a0d38a25d93d2d1e54ce665a3d",
+  "rubric": [
+    [
+      "Engagement and process / 10",
+      "10-point readiness supported",
+      "Four genuine checkpoints, initial failures, corrections and Git history."
+    ],
+    [
+      "Conceptual understanding / 20",
+      "20-point readiness supported",
+      "Six 120\u2013180-word responses, state diagram and actual traces."
+    ],
+    [
+      "Application of cloud knowledge / 25",
+      "25-point readiness supported",
+      "Real Auth identities, exact schema, create-once transaction, server read and deployed rules."
+    ],
+    [
+      "Failure recovery and validation / 20",
+      "20-point readiness supported",
+      "T08/T09/T10/T11/T12; timeout and identity-change guards; no replacement ID."
+    ],
+    [
+      "Creative problem-solving / 15",
+      "15-point readiness supported",
+      "Debug-only post-commit denial hook, server-history recovery, accessible text/icon feedback and AI critique."
+    ],
+    [
+      "Evidence and delivery / 10",
+      "10-point readiness subject to final artifact check",
+      "Release APK install-tested, accessible repository, DOCX and genuine screenshots/logs."
+    ]
+  ],
+  "blockers": "None after final repository accessibility and document checks. Grade remains the instructor\u2019s decision."
+}

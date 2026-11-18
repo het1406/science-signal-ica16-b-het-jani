@@ -1,0 +1,58 @@
+Resolving dependencies...
+Downloading packages...
+  _flutterfire_internals 1.3.79 (1.4.0 available)
+  characters 1.4.0 (1.4.1 available)
+  clock 1.1.2 (1.1.3 available)
+  cloud_firestore 7.1.0 (7.2.0 available)
+  cloud_firestore_platform_interface 8.1.0 (8.2.0 available)
+  cloud_firestore_web 5.8.0 (5.9.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  firebase_auth 7.0.1 (7.1.0 available)
+  firebase_auth_platform_interface 9.1.2 (9.2.0 available)
+  firebase_auth_web 6.3.2 (6.4.0 available)
+  firebase_core 5.1.0 (5.2.0 available)
+  firebase_core_platform_interface 8.1.1 (8.2.0 available)
+  firebase_core_web 4.1.0 (4.2.0 available)
+  flutter_lints 5.0.0 (6.0.0 available)
+  lints 5.1.1 (6.1.0 available)
+  matcher 0.12.17 (0.12.20 available)
+  material_color_utilities 0.11.1 (0.13.1 available)
+  meta 1.16.0 (1.19.0 available)
+  platform 3.1.6 (3.2.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  test_api 0.7.6 (0.7.15 available)
+  vector_math 2.2.0 (2.4.4 available)
+  web 1.1.1 (1.1.2 available)
+Got dependencies!
+23 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Analyzing INCLASS16...                                          
+
+   info • Statements in an if should be enclosed in a block • lib/cloud.dart:32:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/cloud.dart:51:13 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:76:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:95:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:130:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:151:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:206:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:208:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:223:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/controller.dart:238:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/main.dart:481:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/quiz.dart:25:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/quiz.dart:43:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/quiz.dart:75:9 • curly_braces_in_flow_control_structures
+  error • The name 'matches' is defined in the libraries 'package:matcher/src/string_matchers.dart (via package:flutter_test/flutter_test.dart)' and 'package:science_signal_ica16_b/cloud.dart' • test/quiz_test.dart:95:12 • ambiguous_import
+  error • The argument type 'Map<String, dynamic>' can't be assigned to the parameter type 'Pattern'.  • test/quiz_test.dart:95:20 • argument_type_not_assignable
+  error • Too many positional arguments: 1 expected, but 2 found • test/quiz_test.dart:95:62 • extra_positional_arguments
+  error • The name 'matches' is defined in the libraries 'package:matcher/src/string_matchers.dart (via package:flutter_test/flutter_test.dart)' and 'package:science_signal_ica16_b/cloud.dart' • test/quiz_test.dart:97:7 • ambiguous_import
+  error • The argument type 'Map<String, dynamic>' can't be assigned to the parameter type 'Pattern'.  • test/quiz_test.dart:97:15 • argument_type_not_assignable
+  error • Too many positional arguments: 1 expected, but 2 found • test/quiz_test.dart:101:10 • extra_positional_arguments
+  error • The name 'matches' is defined in the libraries 'package:matcher/src/string_matchers.dart (via package:flutter_test/flutter_test.dart)' and 'package:science_signal_ica16_b/cloud.dart' • test/quiz_test.dart:105:7 • ambiguous_import
+  error • The argument type 'Map<String, dynamic>' can't be assigned to the parameter type 'Pattern'.  • test/quiz_test.dart:105:15 • argument_type_not_assignable
+  error • Too many positional arguments: 1 expected, but 2 found • test/quiz_test.dart:105:69 • extra_positional_arguments
+  error • The name 'matches' is defined in the libraries 'package:matcher/src/string_matchers.dart (via package:flutter_test/flutter_test.dart)' and 'package:science_signal_ica16_b/cloud.dart' • test/quiz_test.dart:109:7 • ambiguous_import
+  error • The argument type 'Map<String, dynamic>' can't be assigned to the parameter type 'Pattern'.  • test/quiz_test.dart:109:15 • argument_type_not_assignable
+  error • Too many positional arguments: 1 expected, but 2 found • test/quiz_test.dart:113:10 • extra_positional_arguments
+
+26 issues found. (ran in 1.9s)

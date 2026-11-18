@@ -1,0 +1,8 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/integration_test/restart_test.dart
+Running Gradle task 'assembleDebug'...                             12.5s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...        2,235ms
+00:00 +0: T07 new process retrieves original server document
+EVIDENCE 2026-11-18T03:57:28.512741Z T07 PASS new application process; same user reauthenticated; original path=users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/uxbmi3ObbqhbiGkEhgD9; score=3; server-only verified; timestamp=2026-11-18T03:38:28.298Z
+16:54 +1: (tearDownAll)
+17:08 +1: All tests passed!

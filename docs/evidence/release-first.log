@@ -1,0 +1,9 @@
+PASS release APK: real Email/Password sign-in through native UI
+PASS release APK: live internet questions loaded
+Traceback (most recent call last):
+  File "/Users/hetjani/Desktop/INCLASS16/tools/release_smoke.py", line 52, in <module>
+    ns=wait('Your science signal');assert any(label(n)==f'{score} / 5' for n in ns)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hetjani/Desktop/INCLASS16/tools/release_smoke.py", line 30, in wait
+    raise AssertionError('Timed out waiting for: '+text)
+AssertionError: Timed out waiting for: Your science signal

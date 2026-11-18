@@ -1,0 +1,41 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart
+Running Gradle task 'assembleDebug'...                          
+integration_test/acceptance_test.dart:104:34: Error: This expression has type 'void' and can't be used.
+      await tester.testTextInput.hide();
+                                 ^
+integration_test/acceptance_test.dart:133:34: Error: This expression has type 'void' and can't be used.
+      await tester.testTextInput.hide();
+                                 ^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command '/Users/hetjani/develop/flutter/bin/flutter'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 5s
+Running Gradle task 'assembleDebug'...                              5.5s
+00:00 +0 -1: loading /Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart [E]
+  Failed to load "/Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart": Gradle task assembleDebug failed with exit code 1
+  package:flutter_tools/src/base/common.dart 34:3                    throwToolExit
+  package:flutter_tools/src/android/gradle.dart 600:7                AndroidGradleBuilder.buildGradleApp
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/android/gradle.dart 239:5                AndroidGradleBuilder.buildApk
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/android/android_device.dart 567:7        AndroidDevice.startApp
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/integration_test_device.dart 57:39  IntegrationTestTestDevice.start
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_platform.dart 680:51        FlutterPlatform._startTest.<fn>
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/base/async_guard.dart 108:24             asyncGuard.<fn>
+  
+00:00 +0 -1: Some tests failed.

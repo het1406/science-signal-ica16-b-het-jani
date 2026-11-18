@@ -1,0 +1,79 @@
+[2026-11-18T03:13:04.093Z] ----------------------------------------------------------------------
+[2026-11-18T03:13:04.094Z] Command:       /usr/local/bin/node /Users/hetjani/.npm-global/bin/firebase deploy --only firestore:rules --project science-signal-het-ica16-b
+[2026-11-18T03:13:04.094Z] CLI Version:   15.36.0
+[2026-11-18T03:13:04.094Z] Platform:      darwin
+[2026-11-18T03:13:04.094Z] Node Version:  v24.14.1
+[2026-11-18T03:13:04.095Z] Detected Agent: codex_cli
+[2026-11-18T03:13:04.095Z] Time:          Tue Nov 17 2026 22:13:04 GMT-0500 (Eastern Standard Time)
+[2026-11-18T03:13:04.095Z] ----------------------------------------------------------------------
+
+[2026-11-18T03:13:04.636Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"flutter"}
+[2026-11-18T03:13:04.638Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[2026-11-18T03:13:04.638Z] > authorizing via signed-in user (het7891@gmail.com)
+[2026-11-18T03:13:04.638Z] [iam] checking project science-signal-het-ica16-b for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[2026-11-18T03:13:04.644Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:04.644Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:04.645Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/science-signal-het-ica16-b:testIamPermissions [none]
+[2026-11-18T03:13:04.645Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/science-signal-het-ica16-b:testIamPermissions  x-goog-user-project=science-signal-het-ica16-b
+[2026-11-18T03:13:04.645Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/science-signal-het-ica16-b:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[2026-11-18T03:13:04.747Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/science-signal-het-ica16-b:testIamPermissions 200
+[2026-11-18T03:13:04.747Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/science-signal-het-ica16-b:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+
+=== Deploying to 'science-signal-het-ica16-b'...
+
+i  deploying firestore 
+i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[2026-11-18T03:13:04.748Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:04.748Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:04.748Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/science-signal-het-ica16-b/services/firestore.googleapis.com [none]
+[2026-11-18T03:13:04.748Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/science-signal-het-ica16-b/services/firestore.googleapis.com  x-goog-user-project=science-signal-het-ica16-b
+[2026-11-18T03:13:05.004Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/science-signal-het-ica16-b/services/firestore.googleapis.com 200
+[2026-11-18T03:13:05.004Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/science-signal-het-ica16-b/services/firestore.googleapis.com [omitted]
+✔  firestore: required API firestore.googleapis.com is enabled 
+i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[2026-11-18T03:13:05.011Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.011Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.012Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/science-signal-het-ica16-b/databases/(default) [none]
+[2026-11-18T03:13:05.238Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/science-signal-het-ica16-b/databases/(default) 200
+[2026-11-18T03:13:05.239Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/science-signal-het-ica16-b/databases/(default) {"name":"projects/science-signal-het-ica16-b/databases/(default)","uid":"1d8b4c19-3321-474d-a327-3e734641d2c2","createTime":"2026-11-18T03:13:03.336878Z","updateTime":"2026-11-18T03:13:03.336878Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-11-18T03:13:03.336878Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IIep4Z3GkJgDMLPq253GkJgD"}
+i  cloud.firestore: checking firestore.rules for compilation errors... 
+[2026-11-18T03:13:05.240Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.240Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.240Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b:test [none]
+[2026-11-18T03:13:05.240Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b:test [omitted]
+[2026-11-18T03:13:05.387Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b:test 200
+[2026-11-18T03:13:05.387Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b:test {}
+✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[2026-11-18T03:13:05.389Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.390Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.390Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases pageSize=10&pageToken=
+[2026-11-18T03:13:05.553Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases 200
+[2026-11-18T03:13:05.553Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases {}
+i  firestore: uploading rules firestore.rules... 
+[2026-11-18T03:13:05.553Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.553Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.554Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/rulesets [none]
+[2026-11-18T03:13:05.554Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/rulesets [omitted]
+[2026-11-18T03:13:05.883Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/rulesets 200
+[2026-11-18T03:13:05.883Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/rulesets {"name":"projects/science-signal-het-ica16-b/rulesets/587a2c95-322f-4c68-af6c-3b7405d1e44f","source":{"files":[{"content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /users/{uid}/attempts/{roundId} {\n      allow read: if request.auth != null && request.auth.uid == uid;\n      allow create: if request.auth != null && request.auth.uid == uid\n        && request.resource.data.keys().hasAll(['schemaVersion','variant','categoryId','questionCount','correctCount','submittedAt'])\n        && request.resource.data.keys().hasOnly(['schemaVersion','variant','categoryId','questionCount','correctCount','submittedAt'])\n        && request.resource.data.schemaVersion is int && request.resource.data.schemaVersion == 1\n        && request.resource.data.variant is string && request.resource.data.variant == 'B'\n        && request.resource.data.categoryId is int && request.resource.data.categoryId == 17\n        && request.resource.data.questionCount is int && request.resource.data.questionCount == 5\n        && request.resource.data.correctCount is int && request.resource.data.correctCount >= 0 && request.resource.data.correctCount <= 5\n        && request.resource.data.submittedAt is timestamp && request.resource.data.submittedAt == request.time;\n      allow update, delete: if false;\n    }\n    match /{document=**} { allow read, write: if false; }\n  }\n}\n","name":"firestore.rules"}]},"createTime":"2026-11-18T03:13:05.858270Z","metadata":{"services":["cloud.firestore"]}}
+[2026-11-18T03:13:05.884Z] [rules] created ruleset projects/science-signal-het-ica16-b/rulesets/587a2c95-322f-4c68-af6c-3b7405d1e44f
+[2026-11-18T03:13:05.884Z] [rules] releasing cloud.firestore with ruleset projects/science-signal-het-ica16-b/rulesets/587a2c95-322f-4c68-af6c-3b7405d1e44f
+[2026-11-18T03:13:05.885Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.885Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:05.885Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases/cloud.firestore [none]
+[2026-11-18T03:13:05.885Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases/cloud.firestore {"release":{"name":"projects/science-signal-het-ica16-b/releases/cloud.firestore","rulesetName":"projects/science-signal-het-ica16-b/rulesets/587a2c95-322f-4c68-af6c-3b7405d1e44f"}}
+[2026-11-18T03:13:06.041Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases/cloud.firestore 404
+[2026-11-18T03:13:06.041Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases/cloud.firestore {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[2026-11-18T03:13:06.042Z] [rules] ruleset update failed, attempting to create instead
+[2026-11-18T03:13:06.043Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:06.043Z] Checked if tokens are valid: true, expires at: 1794974951089
+[2026-11-18T03:13:06.043Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases [none]
+[2026-11-18T03:13:06.043Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases {"name":"projects/science-signal-het-ica16-b/releases/cloud.firestore","rulesetName":"projects/science-signal-het-ica16-b/rulesets/587a2c95-322f-4c68-af6c-3b7405d1e44f"}
+[2026-11-18T03:13:06.443Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases 200
+[2026-11-18T03:13:06.443Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/science-signal-het-ica16-b/releases {"name":"projects/science-signal-het-ica16-b/releases/cloud.firestore","rulesetName":"projects/science-signal-het-ica16-b/rulesets/587a2c95-322f-4c68-af6c-3b7405d1e44f","createTime":"2026-11-18T03:13:06.420477Z","updateTime":"2026-11-18T03:13:06.420477Z"}
+[2026-11-18T03:13:06.443Z] [rules] created release projects/science-signal-het-ica16-b/releases/cloud.firestore
+✔  firestore: released rules firestore.rules to cloud.firestore 
+
+✔  Deploy complete! 
+
+Project Console: https://console.firebase.google.com/project/science-signal-het-ica16-b/overview

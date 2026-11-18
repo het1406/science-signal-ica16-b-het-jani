@@ -1,0 +1,24 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart
+Running Gradle task 'assembleDebug'...                             11.1s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           5.3s
+00:00 +0: T01–T12 real Firebase Class B acceptance
+EVIDENCE 2026-11-18T03:37:18.578353Z T01 PASS invalid credentials displayed; real user A authenticated; project=science-signal-het-ica16-b
+EVIDENCE 2026-11-18T03:37:19.081789Z T02 PASS live exact endpoint; encoded=Male%20pandas%20do%20handstands%20while%20urinating%20on%20trees.%20 decoded=Male pandas do handstands while urinating on trees.  count=5
+EVIDENCE 2026-11-18T03:37:29.009957Z T04 PASS alternating answers score=3; repeated taps ignored
+EVIDENCE 2026-11-18T03:37:29.011152Z T05 PASS five answers reviewed; fresh replay checked below
+EVIDENCE 2026-11-18T03:37:36.014906Z T09 WRITE_ACK then injected permission-denied; path=users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/uxbmi3ObbqhbiGkEhgD9; document still exists; score=3; pending=false; cache=false
+EVIDENCE 2026-11-18T03:37:43.070137Z T06 PASS create-once; double submit ignored; exact fields=questionCount,schemaVersion,correctCount,variant,submittedAt,categoryId; timestamp=2026-11-18T03:38:28.298Z; serverOnly=true
+EVIDENCE 2026-11-18T03:37:43.125096Z T09 PASS recovery same ID=uxbmi3ObbqhbiGkEhgD9; no duplicate; Cloud verified
+EVIDENCE 2026-11-18T03:37:45.642417Z COLLISION PASS same ID different score rejected; original preserved
+EVIDENCE 2026-11-18T03:37:47.856878Z T10 PASS independently authenticated B denied read AND create under A
+EVIDENCE 2026-11-18T03:37:49.658192Z T11 PASS deployed rules reject score 6, extra field, update, delete
+EVIDENCE 2026-11-18T03:37:56.334771Z T12 PASS injected unavailable after real transaction; immediate retry blocked; same-ID server recovery; creates=1
+EVIDENCE 2026-11-18T03:38:02.917006Z T12 PASS injected resource-exhausted after real transaction; immediate retry blocked; same-ID server recovery; creates=1
+EVIDENCE 2026-11-18T03:38:16.342993Z T08 PASS emulator radios disabled; unknown/unavailable write; recovery same ID=mK6leJSNxilHhsablL15
+EVIDENCE 2026-11-18T03:38:28.981265Z TIMEOUT PASS real transaction with delayed acknowledgment; 10-second UI unknown state retains busy lock; eventual server verification
+EVIDENCE 2026-11-18T03:38:32.557484Z AUTH_CHANGE PASS stale A completion cannot update B UI
+EVIDENCE 2026-11-18T03:38:33.579172Z T05 PASS replay clears answers and allocates a new ID
+EVIDENCE 2026-11-18T03:38:37.593052Z SUITE PASS; T03 is covered by isolated malformed-response tests; T07 requires the separate restart run.
+01:37 +1: (tearDownAll)
+01:44 +1: All tests passed!

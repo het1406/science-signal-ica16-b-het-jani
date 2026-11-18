@@ -1,0 +1,36 @@
+00:00 +0: loading /Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart
+Running Gradle task 'assembleDebug'...                             14.4s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...           4.3s
+00:00 +0: T01–T12 real Firebase Class B acceptance
+EVIDENCE 2026-11-18T03:18:36.905541Z T01 PASS invalid credentials displayed; real user A authenticated; project=science-signal-het-ica16-b
+EVIDENCE 2026-11-18T03:18:37.597508Z T02 PASS live exact endpoint; encoded=Male%20pandas%20do%20handstands%20while%20urinating%20on%20trees.%20 decoded=Male pandas do handstands while urinating on trees.  count=5
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+Surface already converted to an image
+'package:integration_test/src/_callback_io.dart':
+Failed assertion: line 70 pos 12: '!_isSurfaceRendered'
+
+When the exception was thrown, this was the stack:
+#2      _IOCallbackManager.convertFlutterSurfaceToImage (package:integration_test/src/_callback_io.dart:70:12)
+#3      IntegrationTestWidgetsFlutterBinding.convertFlutterSurfaceToImage (package:integration_test/integration_test.dart:205:27)
+#4      screenshot (file:///Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart:29:17)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///Users/hetjani/Desktop/INCLASS16/integration_test/acceptance_test.dart:136:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from class _AssertionError and package:stack_trace)
+
+The test description was:
+  T01–T12 real Firebase Class B acceptance
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:20 +0 -1: T01–T12 real Firebase Class B acceptance [E]
+  Test failed. See exception logs above.
+  The test description was: T01–T12 real Firebase Class B acceptance
+  
+00:20 +0 -1: (tearDownAll)
+00:28 +0 -1: Some tests failed.

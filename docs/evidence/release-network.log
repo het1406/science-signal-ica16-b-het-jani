@@ -1,0 +1,2 @@
+PASS release APK: actual offline API request shows readable network error and manual Retry questions control
+PASS release APK: manual retry after network restoration loads a live five-question round

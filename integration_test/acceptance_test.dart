@@ -49,10 +49,11 @@ Future<void> setDeviceNetwork(bool online) async {
   for (var i = 0; i < 40 && !await ack.exists(); i++) {
     await Future<void>.delayed(const Duration(milliseconds: 500));
   }
-  if (!await ack.exists())
+  if (!await ack.exists()) {
     throw StateError(
       'Start tools/collect_emulator_evidence.py to control emulator radios.',
     );
+  }
   await Future<void>.delayed(const Duration(seconds: 2));
 }
 

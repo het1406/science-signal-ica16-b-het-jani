@@ -1,0 +1,4 @@
+PASS release APK: native Email/Password sign-in and live quiz previously observed in release-first.log
+PASS release APK: all five review entries independently counted; visible score=2/5; repeated native taps had no extra answers
+PASS release APK: transaction acknowledged and server verification displayed
+PASS release APK: force-stop/relaunch retrieves the same original server round

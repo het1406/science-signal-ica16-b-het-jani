@@ -1,0 +1,32 @@
+{
+  "observed_at_utc": "2026-11-18T03:59:41.365815+00:00",
+  "project": "science-signal-het-ica16-b",
+  "document_path": "users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/uxbmi3ObbqhbiGkEhgD9",
+  "method": "Authenticated owner REST GET, supplementary to Flutter Source.server evidence",
+  "http_status": 200,
+  "document": {
+    "name": "projects/science-signal-het-ica16-b/databases/(default)/documents/users/pc0cgGZwUiQ8mKfPlntJBiSF5VU2/attempts/uxbmi3ObbqhbiGkEhgD9",
+    "fields": {
+      "categoryId": {
+        "integerValue": "17"
+      },
+      "submittedAt": {
+        "timestampValue": "2026-11-18T03:38:28.298Z"
+      },
+      "correctCount": {
+        "integerValue": "3"
+      },
+      "variant": {
+        "stringValue": "B"
+      },
+      "questionCount": {
+        "integerValue": "5"
+      },
+      "schemaVersion": {
+        "integerValue": "1"
+      }
+    },
+    "createTime": "2026-11-18T03:38:28.341543Z",
+    "updateTime": "2026-11-18T03:38:28.341543Z"
+  }
+}
