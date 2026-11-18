@@ -104,7 +104,7 @@ if __name__=='__main__':
   for cell,v in zip(cells,[a,b,c]):cell.text=v
  doc.add_paragraph('These are readiness assessments, not an instructor-assigned grade. No perfect score is guaranteed.')
  doc.add_paragraph('Remaining blockers: '+results['blockers'])
- doc.add_paragraph('Console capture provenance: an earlier genuine Console capture is retained if macOS screen capture is unavailable for the final round. The caption identifies its exact path and timestamp; it is not presented as a screenshot of another record.')
+ doc.add_paragraph('Console capture provenance: Figure 3 shows the final tested attempt ending kEhgD9, matching the server-read evidence and resolved timestamp above. The empty parent user document is expected: the required schema writes only to its attempts subcollection. Earlier genuine captures remain in the repository as development evidence.')
  footer=sec.footer.paragraphs[0];footer.text='Het Jani · Science Signal · Class B · Genuine observed evidence';footer.style='Caption'
  path=ROOT/'submission/ICA16_B_HetJani.docx';doc.save(path)
  print('Wrote',path)
