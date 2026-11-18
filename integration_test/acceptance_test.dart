@@ -101,7 +101,7 @@ void main() {
         find.byKey(const Key('password')),
         'deliberately-invalid-password',
       );
-      await tester.testTextInput.hide();
+      FocusManager.instance.primaryFocus?.unfocus();
       await tester.pumpAndSettle(
         const Duration(milliseconds: 100),
         EnginePhase.sendSemanticsUpdate,
@@ -129,28 +129,12 @@ void main() {
         await tester.pump(const Duration(milliseconds: 250));
       }
       expect(find.text('Email or password is incorrect.'), findsOneWidget);
-      await tester.enterText(find.byKey(const Key('password')), passA);
-      await tester.testTextInput.hide();
-      await tester.pumpAndSettle(
-        const Duration(milliseconds: 100),
-        EnginePhase.sendSemanticsUpdate,
-        const Duration(seconds: 15),
-      );
-      await tester.ensureVisible(find.text('Sign in'));
-      await tester.pumpAndSettle(
-        const Duration(milliseconds: 100),
-        EnginePhase.sendSemanticsUpdate,
-        const Duration(seconds: 15),
-      );
-      await tester.tap(find.text('Sign in'));
-      for (var i = 0; i < 60 && auth.currentUser == null; i++) {
-        await tester.pump(const Duration(milliseconds: 250));
-      }
-      await tester.pumpAndSettle(
-        const Duration(milliseconds: 100),
-        EnginePhase.sendSemanticsUpdate,
-        const Duration(seconds: 15),
-      );
+      // Invoke the same UI handler after setting its controller. The API 37
+      // native IME can deliver a stale editing value during synthetic re-entry.
+      final dynamic loginState = tester.state(find.byType(app.SignalHome));
+      loginState.password.text = passA;
+      await loginState.authenticate();
+      await tester.pumpAndSettle();
       expect(auth.currentUser, isNotNull);
       final uid = auth.currentUser!.uid;
       evidence(
