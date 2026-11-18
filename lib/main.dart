@@ -271,7 +271,8 @@ class _SignalHomeState extends State<SignalHome> {
                           child: const Text('Find my recent cloud rounds'),
                         ),
                       ]),
-                    if (c.phase == Phase.loading)
+                    if (c.phase == Phase.loading ||
+                        (c.phase == Phase.verifying && c.payload == null))
                       panel([
                         const LinearProgressIndicator(),
                         gap(),

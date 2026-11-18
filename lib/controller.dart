@@ -217,23 +217,27 @@ class SignalController extends ChangeNotifier {
     final uid = auth.currentUser!.uid, epoch = _epoch;
     busy = true;
     _set(Phase.verifying, 'Retrieving original round from the server…');
+    final deadline = Timer(const Duration(seconds: 10), () {
+      if (_current(epoch, uid)) {
+        _set(
+          Phase.verifying,
+          'Server retrieval is still pending. Waiting for this original round; retries remain locked.',
+        );
+      }
+    });
     try {
       final target = repository.db
           .collection('users')
           .doc(uid)
           .collection('attempts')
           .doc(id);
-      final raw = await target
-          .get(const GetOptions(source: Source.server))
-          .timeout(const Duration(seconds: 10));
+      final raw = await target.get(const GetOptions(source: Source.server));
       final score = raw.data()?['correctCount'];
       if (score is! int || score < 0 || score > 5) {
         throw StateError('Invalid server score');
       }
       final fixed = fixedPayload(score);
-      final verified = await repository
-          .verify(target, uid, fixed)
-          .timeout(const Duration(seconds: 10));
+      final verified = await repository.verify(target, uid, fixed);
       if (_current(epoch, uid)) {
         ref = target;
         payload = fixed;
@@ -247,6 +251,7 @@ class SignalController extends ChangeNotifier {
         _set(Phase.signedOut, 'Retrieval unavailable. $e');
       }
     } finally {
+      deadline.cancel();
       busy = false;
       notifyListeners();
     }
